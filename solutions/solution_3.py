@@ -1,11 +1,20 @@
 # ToDo: Edge cases and exception handling
-"""
-    Data Analysis – Stock Prices:
-    -----------------------------
-    Imagine you are given historical stock prices for a company, with the following format:
-    prices = [7, 1, 5, 3, 6, 4] Each element represents the stock price on a given day. Write a function to determine the maximum profit you could achieve by buying and selling the stock only once. Note that you cannot sell a stock before you buy one.
-    For the example above, the maximum profit would be 5, achieved by buying at 1 and selling at 6.
-"""
+def max_profit_sale(prices_list: list) -> int:
+    if not prices_list:
+        return 0
+
+    max_profit, min_price = 0, prices_list[0]
+    for price in prices_list:
+        if price < min_price:
+            min_price = price
+            max_profit = 0
+        profit = price - min_price
+        if profit > max_profit:
+            max_profit = profit
+
+    return max_profit
+
 
 if __name__ == '__main__':
-    pass
+    prices = [7, 1, 5, 3, 6, 4]
+    print(max_profit_sale(prices))
