@@ -1,21 +1,21 @@
+# ToDo: Edge cases and exception handling
 import json
 import os
 import random
 from datetime import datetime
 
-from faker import Faker
 from dotenv import load_dotenv
+from faker import Faker
 
 load_dotenv()  # take environment variables from .env file.
-NUM_ROWS = int(os.getenv('NUM_ROWS', 10))
-COLUMNS = eval(os.getenv('FIELDS', []))
 START_DATE = os.getenv('START_DATE', datetime.now().date())
 START_DATE = datetime.strptime(START_DATE, "%Y-%m-%d")
+FILE_NAME = os.getenv('FILE_NAME', 'input.json')
 
 faker = Faker()  # For fake data generation
 
 
-def generate_column(cols):
+def generate_column(cols: list):
     column = dict()
     for col in cols:
         if col == "product_id":
@@ -31,7 +31,7 @@ def generate_column(cols):
     return column
 
 
-def create_json(columns, num_rows):
+def create_json(columns: list, num_rows: int):
     data = []
     for _ in range(num_rows):
         column = generate_column(columns)
@@ -42,4 +42,4 @@ def create_json(columns, num_rows):
 
 
 if __name__ == '__main__':
-    create_json(COLUMNS, NUM_ROWS)
+    pass
