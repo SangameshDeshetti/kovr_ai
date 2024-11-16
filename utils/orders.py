@@ -1,0 +1,11 @@
+orders = [{"order_id": 1, "customer": "Alice", "total": 50, "status": "completed"},
+          {"order_id": 2, "customer": "Bob", "total": 100, "status": "pending"},
+          {"order_id": 3, "customer": "Alice", "total": 55, "status": "completed"},
+          {"order_id": 4, "customer": "Bob", "total": 100, "status": "pending"},
+          {"order_id": 5, "customer": "Bob", "total": 130, "status": "pending"},
+          {"order_id": 6, "customer": "Denise", "total": 40, "status": "pending"},
+          {"order_id": 7, "customer": "Bob", "total": 105, "status": "completed"},
+          {"order_id": 8, "customer": "Denise", "total": 140, "status": "completed"},
+          {"order_id": 9, "customer": "Denise", "total": 60, "status": "pending"},
+          {"order_id": 10, "customer": "Bob", "total": 125, "status": "pending"},
+          {"order_id": 11, "customer": "Alice", "total": 75, "status": "completed"}, ]
