@@ -1,4 +1,3 @@
-# ToDo: Edge cases and exception handling
 """
     Algorithmic Problem – Array and String Manipulation:
     ----------------------------------------------------

@@ -1,18 +1,21 @@
-# ToDo: Edge cases and exception handling
 def max_profit_sale(prices_list: list) -> int:
-    if not prices_list:
-        return 0
+    max_profit = 0
+    try:
+        if not prices_list:
+            return 0
 
-    max_profit, min_price = 0, prices_list[0]
-    for price in prices_list:
-        if price < min_price:
-            min_price = price
-            max_profit = 0
-        profit = price - min_price
-        if profit > max_profit:
-            max_profit = profit
-
-    return max_profit
+        min_price = prices_list[0]
+        for price in prices_list:
+            if price < min_price:
+                min_price = price  # Buy at min price for max profit
+                max_profit = 0
+            profit = price - min_price
+            if profit > max_profit:
+                max_profit = profit  # Sell at highest price to make max profit
+    except Exception as e:
+        raise e
+    finally:
+        return max_profit
 
 
 if __name__ == '__main__':
