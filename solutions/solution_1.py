@@ -62,7 +62,6 @@ def best_seller(sales: list, input_date: str) -> dict:
                 else:
                     products_in_input_month[product_id] += revenue
 
-
             for key, val in products_in_input_month.items():
                 if val > max_revenue:
                     best_seller_product, max_revenue = key, val

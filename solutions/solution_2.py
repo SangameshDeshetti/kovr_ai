@@ -1,11 +1,26 @@
-"""
-    Algorithmic Problem – Array and String Manipulation:
-    ----------------------------------------------------
-    Given a list of strings, write a function to group all anagrams together. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase.
-    For example:
-    input_list = ["eat", "tea", "tan", "ate", "nat", "bat"] Expected output:
-    [ ["eat", "tea", "ate"], ["tan", "nat"], ["bat"] ] Your function should return a list of lists, where each sublist contains anagrams grouped together.
-"""
+def group_anagrams(strings: list):
+    anagrams_list = []
+    try:
+        if not strings:
+            return []
+
+        anagrams_dict = {}
+        for string in strings:
+            sorted_string = ''.join(sorted(string))
+            # all anagrams will have same sorted_string as key
+            if not sorted_string in anagrams_dict:
+                anagrams_dict[sorted_string] = [string, ]
+            else:
+                anagrams_dict[sorted_string].append(string)
+
+        # Our anagrams list will be the values of this dictionary
+        anagrams_list = list(anagrams_dict.values())
+    except Exception as e:
+        raise e
+    finally:
+        return anagrams_list
+
 
 if __name__ == '__main__':
-    pass
+    input_list = ["eat", "tea", "tan", "ate", "nat", "bat"]
+    print(group_anagrams(input_list))
